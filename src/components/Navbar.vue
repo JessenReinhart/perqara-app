@@ -9,8 +9,9 @@ import { Icon } from '@iconify/vue';
       <img src="../assets/logo.png" alt="" class="h-[31px] my-auto" />
     </router-link>
     <div class="bg-zinc-900 text-white flex flex-row items-center rounded px-4 py-2 my-auto ml-9 w-1/3">
+      <Icon icon="material-symbols:movie" class="text-zinc-700" />
       <input type="text" list="movielist" name="movielist" id="movielist" placeholder="Find Movie"
-        class=" bg-zinc-900 flex-grow focus:outline-none">
+        class=" bg-zinc-900 flex-grow focus:outline-none mx-2">
       <Icon icon="ic:baseline-search" />
     </div>
     <datalist id="movielist">
