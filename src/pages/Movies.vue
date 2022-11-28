@@ -15,7 +15,7 @@ const genres = ["Action", 'Adventure', 'Comedy', 'Drama', 'Fantasy', 'History', 
                 class="flex flex-col rounded-xl bg-gradient-to-b from-[#0E1723] to-[#1E232A]/0 w-2/5 text-white h-max ">
                 <span class="text-lg font-semibold py-6 px-8 border-b border-[#FFFFFF]/10">Sort Result By</span>
                 <div class="border-b border-[#FFFFFF]/10 flex flex-row">
-                    <select class="py-2 px-8 m-4 w-full rounded bg-slate-500">
+                    <select class="py-2 px-4 m-4 w-full rounded bg-[#E0E0E021]">
                         <option selected>
                             Popularity
                         </option>
@@ -25,7 +25,7 @@ const genres = ["Action", 'Adventure', 'Comedy', 'Drama', 'Fantasy', 'History', 
                 <div class="py-6 flex flex-col">
                     <label v-for="genre, key in genres" :key="key" :for="genre"
                         class="flex flex-row space-between cursor-pointer w-full py-2 px-8 hover:bg-white/10 transition">
-                        <span>
+                        <span class="text-base font-light">
                             {{ genre }}
                         </span>
                         <input type="checkbox" :name="genre" :id="genre" class="ml-auto">

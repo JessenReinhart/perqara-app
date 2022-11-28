@@ -31,10 +31,11 @@ const movies = [{
 <template>
     <section class="bg-zinc-900 w-full py-24 flex flex-col justify-center items-center">
         <div class="flex-row gap-9 flex">
-            <div v-for="movie, key in movies" :key="key" class="h-96 flex flex-row items-center"
-                :class="movie.isMain ? '' : 'opacity-40'">
+            <div v-for="movie, key in movies" :key="key"
+                class="h-96 flex flex-row items-center hover:-translate-y-2 hover:scale-105 transition cursor-pointer"
+                :class="movie.isMain ? '' : 'opacity-40 hover:opacity-100'">
                 <img :src="movie.image" alt="" class="h-full w-60 object-cover">
-                <div class="bg-black max-w-xs h-88 py-6 px-6 flex flex-col text-white gap-3">
+                <div class="bg-black max-w-xs h-[324px] py-6 px-6 flex flex-col text-white gap-3">
                     <span class="font-bold flex flex-row gap-2 items-center">
                         <Icon icon="material-symbols:star" class="text-yellow-500 mb-1" />{{ movie.rating }}
                     </span>
@@ -42,7 +43,7 @@ const movies = [{
                     <span class="text-sm">
                         {{ movie.year }} - {{ movie.genre }}
                     </span>
-                    <p class="text-sm leading-relaxed overflow-y-auto">{{ movie.description }}</p>
+                    <p class="text-xs leading-relaxed overflow-y-auto">{{ movie.description }}</p>
                 </div>
             </div>
         </div>
