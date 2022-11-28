@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import MovieList from "../components/MovieList.vue";
+const genres = ["Action", 'Adventure', 'Comedy', 'Drama', 'Fantasy', 'History', 'Horror']
 </script>
 <template>
     <section class="flex flex-col gap-10 px-32 py-20">
@@ -9,9 +10,26 @@ import MovieList from "../components/MovieList.vue";
                 Movies
             </h2>
         </div>
-        <div class="flex flex-row gap-4 ">
-            <div class="flex flex-col rounded-xl bg-slate-700 w-2/5 text-white">
-                <span class="text-lg font-bold p-10 border-b border-slate-600">Sort Result By</span>
+        <div class="flex flex-row gap-6">
+            <div class="flex flex-col rounded-xl bg-gradient-to-b from-slate-800 w-2/5 text-white h-max ">
+                <span class="text-lg font-bold py-6 px-4 border-b border-slate-600">Sort Result By</span>
+                <div class="border-b border-slate-600 flex flex-row">
+                    <select class="py-2 px-4 m-4 w-full rounded bg-slate-500">
+                        <option selected>
+                            Popularity
+                        </option>
+                    </select>
+                </div>
+                <span class="text-lg font-bold py-6 px-4 border-b border-slate-600">Genres</span>
+                <div class="py-6 flex flex-col">
+                    <label v-for="genre, key in genres" :key="key" :for="genre"
+                        class="flex flex-row space-between cursor-pointer w-full py-2 px-4 hover:bg-white/10 transition">
+                        <span>
+                            {{ genre }}
+                        </span>
+                        <input type="checkbox" :name="genre" :id="genre" class="ml-auto">
+                    </label>
+                </div>
             </div>
             <MovieList />
         </div>
